@@ -5,6 +5,9 @@
 
     <head>
         <meta charset="UTF-8">
+        <!-- Neat trick to make the content render adapt to the viewport size -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="height=device-height, initial-scale=1">
         <title>Doomsday clock</title>
         
         <!-- External resources-->
@@ -22,9 +25,13 @@
         <div class="page">
 
             <div class="centralBoxContainer"> 
+
+                <figure>
+                    <img src="visuals/hall.png" alt="Hall from Space Odyssey" width="auto" height="auto">
+                </figure>
         
                 <div class="centralBox">
-                    <h1>Days until A.I. develop sentience!</h1>
+                    <h1><span id="greeting"></span></h1>
                     <h2><span id="clock"></span></h2>
 
                 </div>
@@ -34,7 +41,9 @@
         </div>
         
     </body>
-<footer><a id="author" href="https://github.com/lucas-t-reis">by Lucas Reis </a  > </footer>
+
+
+<footer><a id="author" href="https://github.com/lucas-t-reis">by Lucas Reis </a> </footer>
 
 
 

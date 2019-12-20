@@ -1,37 +1,50 @@
 body {
+
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    border: 1px solid violet;
-    background: linear-gradient(-45deg, #bdc3c7, #2c3e50, #614385 ,#516395);
+    background: linear-gradient(-45deg, #FF0000, #900D0D, #111111,  #000000);
     background-size: 400% 400%;
     animation: movingBG 15s ease infinite;
+
 }
 
 
 @keyframes movingBG {
+
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
-    100% { bakground-position: 0% 50%; }
+    100% { background-position: 0% 50%; }
+
+}
+
+img {
+
+    max-width: 30%;
+    height: auto;
+    margin: 1% auto;
+
 }
 
 .centralBoxContainer {
-
-    border: 1px solid green;
+    
+    justify-items: center;
+    /*border: 1px solid green;*/
+    padding: 1% 0 10% 0;
     margin: 0 auto;
-    padding: 15% 0 15% 0;
-
 }
+
 .centralBox {
 
-    width: 50%;
+    width: 40%;
     height: 80%;
     margin: 1% auto;
     box-shadow: 10px 10px #282828;
-    /*border: 1px solid red;*/
     border-radius: 7px;
+    /*border: 1px solid red;*/
     background-color: white;
-    padding: 1% 0 1% 0;
+    padding: 1% 2% 1% 2%;
     animation: fadeIn 2s;
+    font-size: 1vw;
      
 }
 
@@ -42,12 +55,15 @@ body {
 
 #clock {
 
-    font-size: 2.5em;
+    /* Viewport % grants responsiveness to font inside the main div */
+    font-size: 6vw;
 
 }
 
 #author {
+
     color: white;
     text-decoration: none;
+    
 }
 
