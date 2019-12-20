@@ -1,0 +1,53 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    border: 1px solid violet;
+    background: linear-gradient(-45deg, #bdc3c7, #2c3e50, #614385 ,#516395);
+    background-size: 400% 400%;
+    animation: movingBG 15s ease infinite;
+}
+
+
+@keyframes movingBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { bakground-position: 0% 50%; }
+}
+
+.centralBoxContainer {
+
+    border: 1px solid green;
+    margin: 0 auto;
+    padding: 15% 0 15% 0;
+
+}
+.centralBox {
+
+    width: 50%;
+    height: 80%;
+    margin: 1% auto;
+    box-shadow: 10px 10px #282828;
+    /*border: 1px solid red;*/
+    border-radius: 7px;
+    background-color: white;
+    padding: 1% 0 1% 0;
+    animation: fadeIn 2s;
+     
+}
+
+@keyframes fadeIn {
+    from {opacity:  0;}
+    to {opacity: 1;}
+}
+
+#clock {
+
+    font-size: 2.5em;
+
+}
+
+#author {
+    color: white;
+    text-decoration: none;
+}
+
