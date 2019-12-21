@@ -20,25 +20,16 @@ body {
 img {
 
     /* Aligning to middle of the page */
-    padding-top: 20vh;
+    padding-top: 10vh;
     max-width: 30%;
     height: auto;
     margin: 1% auto;
 
 }
 
-footer {
-    bottom: 0;
-    height: 10vmax;
-    left: 0;
-    position: fixed;
-    width: 100%;
-}
-
 .centralBoxContainer {
     
     justify-items: center;
-    border: 1px solid green;
     padding: 1% 0 10% 0;
     margin: 0 auto;
 }
