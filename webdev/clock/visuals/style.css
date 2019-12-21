@@ -3,7 +3,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     background: linear-gradient(-45deg, #FF0000, #900D0D, #111111,  #000000);
-    background-size: 400% 400%;
+    background-size: 800% 800%;
     animation: movingBG 15s ease infinite;
 
 }
@@ -19,16 +19,26 @@ body {
 
 img {
 
+    /* Aligning to middle of the page */
+    padding-top: 20vh;
     max-width: 30%;
     height: auto;
     margin: 1% auto;
 
 }
 
+footer {
+    bottom: 0;
+    height: 10vmax;
+    left: 0;
+    position: fixed;
+    width: 100%;
+}
+
 .centralBoxContainer {
     
     justify-items: center;
-    /*border: 1px solid green;*/
+    border: 1px solid green;
     padding: 1% 0 10% 0;
     margin: 0 auto;
 }
@@ -40,17 +50,24 @@ img {
     margin: 1% auto;
     box-shadow: 10px 10px #282828;
     border-radius: 7px;
-    /*border: 1px solid red;*/
     background-color: white;
     padding: 1% 2% 1% 2%;
     animation: fadeIn 2s;
-    font-size: 1vw;
+    font-size: 1.5vh;
      
 }
 
 @keyframes fadeIn {
     from {opacity:  0;}
     to {opacity: 1;}
+}
+
+#page {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 #clock {
