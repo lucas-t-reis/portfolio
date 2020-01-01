@@ -1,0 +1,23 @@
+body {
+
+    margin: 0;
+    padding: 0;
+    background: #000;
+
+}
+
+canvas {    
+    display: block
+}
+
+
+footer {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}
+#author {
+    color: white;
+    text-decoration : none;
+    font-size: 2em;
+}
