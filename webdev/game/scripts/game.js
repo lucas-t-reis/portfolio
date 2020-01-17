@@ -3,23 +3,25 @@
 var canvas = document.getElementById('canvas')
 var ctx = canvas.getContext('2d')
 
-// Loading resources
-const playerImg = document.getElementById('player')
 // Setting up structures
 const player =  {
+
+    playerImg: document.getElementById('player'),
     x: 50,
     y: 50,
     speed: 4,
     dx: 0,
     dy: 0
-}
-//ctx.font = '30px Arial';
-//ctx.fillText('Testing grounds', 250, 250);
 
-function drawPlayer() { ctx.drawImage(playerImg, player.x, player.y, 100, 100) }
+}
+
+const movementController = {
+    lastKey: "x"
+}
+
+function drawPlayer() { ctx.drawImage(player.playerImg, player.x, player.y, 100, 100) }
 
 function collision(dx, dy) {
-     
     // Wall - rect width = collision at 500px
     // Wall - rect height = collision at 500px
     if(player.x <= 0 || player.x >=500 || player.y <= 0 || player.y >= 500) {
@@ -29,19 +31,16 @@ function collision(dx, dy) {
 } 
 
 function newPos() {
-     
+
      player.x += player.dx;
      player.y += player.dy;
 
      collision(player.dx, player.dy)
-
 }
 
 
 function clear() {
-    
     ctx.clearRect(0,0, canvas.width, canvas.height)
-
 }
 
 function update() {
@@ -53,14 +52,34 @@ function update() {
 
 }
 
-function moveRight() { player.dx += player.speed }
-function moveLeft() { player.dx -= player.speed }
-function moveUp() {  player.dy -= player.speed }
-function moveDown() { player.dy += player.speed }
+// To fix the cost of changing direction, speed must increase twofold
+function moveRight() { 
+    let v = player.speed
+    if(movementController.lastKey == "ArrowLeft") v = 2*v 
+    player.dx += v
+}
+function moveLeft() {
+    let v = player.speed
+    if(movementController.lastKey == "ArrowRight") v = 2*v 
+    player.dx -= v
+}
+function moveUp() {  
+    let v = player.speed
+    if(movementController.lastKey=="ArrowDown") v = 2*v
+    player.dy -= v
+}
+function moveDown() { 
+    let v = player.speed
+    if(movementController.lastKey == "ArrowUp") v = 2*v
+    player.dy += v 
+
+}
 
 var keyDown = function(e) {
 
-    console.log(e.key);
+
+    if(e.repeat) return
+    console.log(e.key)
     switch(e.key){
         case 'ArrowRight':
         moveRight()
@@ -79,6 +98,7 @@ var keyDown = function(e) {
 
 var keyUp = function(e) {
 
+    console.log(e.key)
     switch(e.key){
         case 'ArrowRight':
         case 'ArrowLeft':
@@ -88,6 +108,8 @@ var keyUp = function(e) {
          player.dy = 0
          break
     }
+
+    movementController.lastKey = e.key
 }
 
 
