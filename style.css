@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+/* Customizing default behavior */
+* {
+
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+
+:root {
+
+    --animation-duration: 0.55s;
+    --animation-onset-delay: 0.16s;
+
+}
+
+.menu { 
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+
+}
+
+.menu ul {
+    
+    list-style: none;
+    position: relative;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.menu ul li a {
+    
+    color: #333;
+    text-decoration: none;
+    font-size: 3em;
+    display: inline-flex;
+    padding: 5px 20px;
+}
+.menu ul:hover li a { color: rgba(77, 74, 74, 0.1);}
+
+.menu ul li:hover a {
+
+    color: #000;
+    background: #fff;
+
+}
+
+/* Big text setup */
+.menu ul li a:before {
+    
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2.5em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 500px;
+    transition: letter-spacing 0.5s, left 0.5s;
+    color: rgba(0,0,0, 0.1);
+}
+
+.menu ul li a:hover:before {
+    
+    content: attr(data-text);
+    opacity: 1;
+    left: 50%;
+    width: 3840px;
+    height: 2160px;
+    letter-spacing: 10px;
+}
+
+@media only screen and (max-width: 1360px) {
+    .menu ul li a:before { font-size: 2em;}
+}
+
+.menu ul li:nth-child(4n+1) a:before { background: #5aaabe; transition: var(--animation-duration); transition-delay: var(--animation-onset-delay); }
+.menu ul li:nth-child(4n+2) a:before { background: #ff7675; transition: var(--animation-duration); transition-delay: var(--animation-onset-delay); }
+.menu ul li:nth-child(4n+3) a:before { background: #55ef90; transition: var(--animation-duration); transition-delay: var(--animation-onset-delay); }
+.menu ul li:nth-child(4n+4) a:before { background: #a29bfe; transition: var(--animation-duration); transition-delay: var(--animation-onset-delay); }
+

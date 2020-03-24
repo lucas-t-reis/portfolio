@@ -19,11 +19,12 @@ const movementController = {
     lastKey: "x"
 }
 
-function drawPlayer() { ctx.drawImage(player.playerImg, player.x, player.y, 100, 100) }
+function drawPlayer() { 
+    player.playerImg.style.right = player.x + "px;"
+ }
 
 function collision(dx, dy) {
-    // Wall - rect width = collision at 500px
-    // Wall - rect height = collision at 500px
+
     if(player.x <= 0 || player.x >=500 || player.y <= 0 || player.y >= 500) {
         player.x -= dx;
         player.y -= dy;
@@ -32,10 +33,10 @@ function collision(dx, dy) {
 
 function newPos() {
 
-     player.x += player.dx;
-     player.y += player.dy;
+    player.x += player.dx;
+    player.y += player.dy;
 
-     collision(player.dx, player.dy)
+    collision(player.dx, player.dy)
 }
 
 
@@ -45,41 +46,22 @@ function clear() {
 
 function update() {
 
-    clear()
-    drawPlayer()
+   // clear()
     newPos()
+    drawPlayer()
     requestAnimationFrame(update)
 
 }
 
 // To fix the cost of changing direction, speed must increase twofold
-function moveRight() { 
-    let v = player.speed
-    if(movementController.lastKey == "ArrowLeft") v = 2*v 
-    player.dx += v
-}
-function moveLeft() {
-    let v = player.speed
-    if(movementController.lastKey == "ArrowRight") v = 2*v 
-    player.dx -= v
-}
-function moveUp() {  
-    let v = player.speed
-    if(movementController.lastKey=="ArrowDown") v = 2*v
-    player.dy -= v
-}
-function moveDown() { 
-    let v = player.speed
-    if(movementController.lastKey == "ArrowUp") v = 2*v
-    player.dy += v 
-
-}
+function moveRight() { player.dx += player.speed }
+function moveLeft() { player.dx -= player.speed }
+function moveUp() { player.dy -= player.speed }
+function moveDown() { player.dy += player.speed }
 
 var keyDown = function(e) {
 
-
     if(e.repeat) return
-    console.log(e.key)
     switch(e.key){
         case 'ArrowRight':
         moveRight()
@@ -98,20 +80,16 @@ var keyDown = function(e) {
 
 var keyUp = function(e) {
 
-    console.log(e.key)
     switch(e.key){
         case 'ArrowRight':
         case 'ArrowLeft':
         case 'ArrowUp':
         case 'ArrowDown':
-         player.dx = 0
-         player.dy = 0
-         break
+            player.dx = 0
+            player.dy = 0
+            break
     }
-
-    movementController.lastKey = e.key
 }
-
 
 update()
 

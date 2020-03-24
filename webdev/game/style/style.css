@@ -5,7 +5,11 @@ canvas {
 
 #player {
 
-    display: none;
-
-
+    position: absolute;
+    background-image: url(../assets/spaceship.png);
+    background-color: black;
+    height: 100 px;
+    width: 100 px;
+    top: 50 px;
+    right: 50 px;
 }
