@@ -36,6 +36,7 @@
 
 }
 
+/* Default menu behavior */
 .menu ul li a {
     
     color: #333;
@@ -44,8 +45,14 @@
     display: inline-flex;
     padding: 5px 20px;
 }
-.menu ul:hover li a { color: rgba(77, 74, 74, 0.1);}
 
+.menu ul:hover li a { 
+    
+    color: rgba(77, 74, 74, 0);
+    transition: 0.3s;
+}
+
+/* Active selection */
 .menu ul li:hover a {
 
     color: #000;
