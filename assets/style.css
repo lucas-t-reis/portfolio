@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+.theme {
+    text-align: center;
+    font-size: 6em;
+}
