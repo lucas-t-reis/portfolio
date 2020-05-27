@@ -4,10 +4,19 @@
     font-family: "Montserrat", sans-serif;
 }
 
+footer {
+
+    padding-top:3vw;
+    padding-bottom: 1vw;
+
+}
+
 .card-img-top {
+
     width: 100%;
     height: 10vw;
     object-fit: cover;
+
 }
 
 .theme {
@@ -21,6 +30,13 @@
     background-size: 800% 800%;
     animation: movingBG 30s ease infinite;
 
+}
+
+.git-footer {
+
+    width: 100%;
+    height: 5vw;
+    
 }
 
 @keyframes movingBG {
